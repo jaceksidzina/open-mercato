@@ -1,0 +1,775 @@
+# Instincts generated from https://github.com/jaceksidzina/open-mercato
+# Generated: 2026-03-07T19:09:00.594Z
+# Version: 2.0
+
+---
+id: open-mercato-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-mercato
+---
+
+# Open Mercato Commit Length
+
+## Action
+
+Write moderate-length commit messages (~50 characters)
+
+## Evidence
+
+- Average commit message length: 51 chars
+- Based on 200 commits
+
+---
+id: open-mercato-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-mercato
+---
+
+# Open Mercato Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: open-mercato-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-mercato
+---
+
+# Open Mercato Export Style
+
+## Action
+
+Prefer default exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: default
+
+---
+id: open-mercato-arch-feature-based
+trigger: "when adding a new feature"
+confidence: 0.85
+domain: architecture
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-mercato
+---
+
+# Open Mercato Arch Feature Based
+
+## Action
+
+Create a new folder in src/features/ with all related code colocated
+
+## Evidence
+
+- Feature-based module organization detected
+- Structure: src/features/[feature-name]/
+
+---
+id: open-mercato-test-framework
+trigger: "when writing tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-mercato
+---
+
+# Open Mercato Test Framework
+
+## Action
+
+Use playwright as the test framework
+
+## Evidence
+
+- Test framework detected: playwright
+- File pattern: *.test.ts
+
+---
+id: open-mercato-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-mercato
+---
+
+# Open Mercato Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.ts
+
+## Evidence
+
+- File pattern: *.test.ts
+- Consistent across test files
+
+---
+id: open-mercato-test-mocking
+trigger: "when mocking dependencies in tests"
+confidence: 0.75
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-mercato
+---
+
+# Open Mercato Test Mocking
+
+## Action
+
+Use jest.mock for mocking
+
+## Evidence
+
+- Mocking pattern detected: jest.mock
+- Consistent across test files
+
+---
+id: open-mercato-test-types
+trigger: "when planning tests for a feature"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-mercato
+---
+
+# Open Mercato Test Types
+
+## Action
+
+Write unit, integration tests to match project standards
+
+## Evidence
+
+- Test types detected: unit, integration
+- Coverage config: yes
+
+---
+id: open-mercato-workflow-database-migration
+trigger: "when modifying the database schema or adding tables"
+confidence: 0.75
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-mercato
+---
+
+# Open Mercato Workflow Database Migration
+
+## Action
+
+Follow the database-migration workflow:
+1. Create migration file
+2. Update schema definitions
+3. Generate/update types
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~5x per month
+- Files: migrations/*, **/types.ts
+
+---
+id: open-mercato-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-mercato
+---
+
+# Open Mercato Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~13x per month
+- Files: packages/cli/src/lib/testing/*, .ai/qa/tests/*, apps/mercato/src/modules/example/__integration__/*
+
+---
+id: open-mercato-workflow-version-release
+trigger: "when doing version release"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-mercato
+---
+
+# Open Mercato Workflow Version Release
+
+## Action
+
+Follow the version-release workflow:
+1. Update version in all package.json files (main app + all packages)
+2. Update yarn.lock
+3. Update .gitignore if needed
+4. Create release commit with version number
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: apps/mercato/package.json, package.json, packages/*/package.json
+
+---
+id: open-mercato-workflow-integration-test-suite
+trigger: "when doing integration test suite"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-mercato
+---
+
+# Open Mercato Workflow Integration Test Suite
+
+## Action
+
+Follow the integration-test-suite workflow:
+1. Create TC-*-*.spec.ts files in __integration__ directories
+2. Add test helpers and fixtures if needed
+3. Update integration test configuration
+4. Add corresponding test files in create-app template
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~8x per month
+- Files: packages/*/src/modules/*/__integration__/TC-*.spec.ts, packages/create-app/template/src/modules/*/__integration__/TC-*.spec.ts, packages/cli/src/lib/testing/integration.ts
+
+---
+id: open-mercato-workflow-i18n-translation-sync
+trigger: "when doing i18n translation sync"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-mercato
+---
+
+# Open Mercato Workflow I18n Translation Sync
+
+## Action
+
+Follow the i18n-translation-sync workflow:
+1. Update en.json (English) base translations
+2. Update de.json (German) translations
+3. Update es.json (Spanish) translations
+4. Update pl.json (Polish) translations
+5. Sync changes across all affected modules
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~12x per month
+- Files: */i18n/en.json, */i18n/de.json, */i18n/es.json
+
+---
+id: open-mercato-workflow-api-route-creation
+trigger: "when doing api route creation"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-mercato
+---
+
+# Open Mercato Workflow Api Route Creation
+
+## Action
+
+Follow the api-route-creation workflow:
+1. Create route.ts file in api directory structure
+2. Add corresponding integration tests
+3. Update API documentation or OpenAPI specs
+4. Add guards/validation if needed
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~10x per month
+- Files: packages/*/src/modules/*/api/*/route.ts, packages/*/src/modules/*/api/guards.ts, packages/*/src/modules/*/__integration__/TC-*.spec.ts
+
+---
+id: open-mercato-workflow-database-migration
+trigger: "when modifying the database schema or adding tables"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-mercato
+---
+
+# Open Mercato Workflow Database Migration
+
+## Action
+
+Follow the database-migration workflow:
+1. Create Migration*.ts file with timestamp
+2. Update .snapshot-open-mercato.json
+3. Update corresponding entities.ts if needed
+4. Test migration in integration tests
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~6x per month
+- Files: packages/*/src/modules/*/migrations/Migration*.ts, packages/*/src/modules/*/migrations/.snapshot-open-mercato.json, packages/*/src/modules/*/data/entities.ts
+
+---
+id: open-mercato-workflow-spec-documentation
+trigger: "when doing spec documentation"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-mercato
+---
+
+# Open Mercato Workflow Spec Documentation
+
+## Action
+
+Follow the spec-documentation workflow:
+1. Create SPEC-*.md file in .ai/specs/
+2. Update README.md specs index if needed
+3. Add related analysis or plan documents
+4. Link specs to implementation commits
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~8x per month
+- Files: .ai/specs/SPEC-*.md, .ai/specs/README.md, .ai/specs/analysis/ANALYSIS-*.md
+
+---
+id: open-mercato-workflow-template-sync
+trigger: "when doing template sync"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-mercato
+---
+
+# Open Mercato Workflow Template Sync
+
+## Action
+
+Follow the template-sync workflow:
+1. Update files in packages/create-app/template/
+2. Mirror changes from main app modules
+3. Update template-specific configuration
+4. Sync integration tests and examples
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~6x per month
+- Files: packages/create-app/template/src/modules/**/*, packages/create-app/template/.env.example, packages/create-app/template/src/modules.ts
+
+---
+id: open-mercato-camel-case-files
+trigger: "When creating new TypeScript files"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: jaceksidzina/open-mercato
+---
+
+# Open Mercato Camel Case Files
+
+## Action
+
+Use camelCase naming for file names
+
+## Evidence
+
+- Consistent camelCase pattern in config files
+- TypeScript files follow camelCase convention
+
+---
+id: open-mercato-pascal-case-classes
+trigger: "When defining new classes or components"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: jaceksidzina/open-mercato
+---
+
+# Open Mercato Pascal Case Classes
+
+## Action
+
+Use PascalCase naming for class names
+
+## Evidence
+
+- PascalCase detected in codeStyle analysis
+- Standard React/TS convention
+
+---
+id: open-mercato-screaming-snake-constants
+trigger: "When declaring constants"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: jaceksidzina/open-mercato
+---
+
+# Open Mercato Screaming Snake Constants
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constant names
+
+## Evidence
+
+- SCREAMING_SNAKE_CASE pattern in namingConventions
+- Consistent across codebase
+
+---
+id: open-mercato-default-exports
+trigger: "When exporting main module functionality"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: jaceksidzina/open-mercato
+---
+
+# Open Mercato Default Exports
+
+## Action
+
+Use default exports as the primary export style
+
+## Evidence
+
+- exportStyle: 'default' in analysis
+- Mixed import style suggests default preference
+
+---
+id: open-mercato-playwright-tests
+trigger: "When writing integration tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: jaceksidzina/open-mercato
+---
+
+# Open Mercato Playwright Tests
+
+## Action
+
+Use Playwright framework with *.test.ts file pattern
+
+## Evidence
+
+- framework: 'playwright' in testing config
+- filePattern: '*.test.ts'
+- TC-*.spec.ts pattern in workflows
+
+---
+id: open-mercato-tc-integration-naming
+trigger: "When creating integration test files"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: jaceksidzina/open-mercato
+---
+
+# Open Mercato Tc Integration Naming
+
+## Action
+
+Name files using TC-*-*.spec.ts pattern in __integration__ directories
+
+## Evidence
+
+- TC-*.spec.ts pattern in integration-test-suite workflow
+- Frequency: 8x/month usage
+
+---
+id: open-mercato-jest-mocking
+trigger: "When mocking dependencies in tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: jaceksidzina/open-mercato
+---
+
+# Open Mercato Jest Mocking
+
+## Action
+
+Use jest.mock() style mocking
+
+## Evidence
+
+- mockingStyle: 'jest.mock' in testing analysis
+- Coverage config enabled
+
+---
+id: open-mercato-try-catch-errors
+trigger: "When handling errors in code"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: jaceksidzina/open-mercato
+---
+
+# Open Mercato Try Catch Errors
+
+## Action
+
+Use try-catch blocks for error handling
+
+## Evidence
+
+- style: 'try-catch' in errorHandling analysis
+- No custom error classes or boundaries detected
+
+---
+id: open-mercato-conventional-commits
+trigger: "When making commits"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: jaceksidzina/open-mercato
+---
+
+# Open Mercato Conventional Commits
+
+## Action
+
+Use conventional commit format with prefixes: fix, feat, docs
+
+## Evidence
+
+- fix, feat, docs prefixes in commit analysis
+- Examples: 'fix: codeQL fixes', 'feat: changelog update'
+
+---
+id: open-mercato-scope-in-commits
+trigger: "When fixing UI-specific issues"
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: jaceksidzina/open-mercato
+---
+
+# Open Mercato Scope In Commits
+
+## Action
+
+Include scope in commit message like 'fix(ui): description'
+
+## Evidence
+
+- fix(ui): hide pagination bar example
+- Scoped commits pattern visible
+
+---
+id: open-mercato-pr-number-commits
+trigger: "When making release or significant commits"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: jaceksidzina/open-mercato
+---
+
+# Open Mercato Pr Number Commits
+
+## Action
+
+Include PR number in commit message format: 'description (#123)'
+
+## Evidence
+
+- release: v0.4.6 (#872)
+- Multiple examples with PR numbers in parentheses
+
+---
+id: open-mercato-version-release-workflow
+trigger: "When ready to create a new release"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: jaceksidzina/open-mercato
+---
+
+# Open Mercato Version Release Workflow
+
+## Action
+
+Update all package.json files, yarn.lock, and create versioned release commit
+
+## Evidence
+
+- version-release workflow with 0.95 confidence
+- ~2x/month frequency
+- Affects all package files
+
+---
+id: open-mercato-api-route-structure
+trigger: "When adding new backend API functionality"
+confidence: 0.87
+domain: workflow
+source: repo-analysis
+source_repo: jaceksidzina/open-mercato
+---
+
+# Open Mercato Api Route Structure
+
+## Action
+
+Create route.ts in packages/*/src/modules/*/api/* with corresponding integration tests
+
+## Evidence
+
+- api-route-creation workflow
+- ~10x/month frequency
+- Consistent route.ts pattern
+
+---
+id: open-mercato-migration-timestamp
+trigger: "When schema changes are needed"
+confidence: 0.88
+domain: workflow
+source: repo-analysis
+source_repo: jaceksidzina/open-mercato
+---
+
+# Open Mercato Migration Timestamp
+
+## Action
+
+Create Migration*.ts file with timestamp and update .snapshot-open-mercato.json
+
+## Evidence
+
+- database-migration workflow
+- Migration*.ts pattern
+- Snapshot updates required
+
+---
+id: open-mercato-i18n-sync-all
+trigger: "When adding new UI text or features that need localization"
+confidence: 0.92
+domain: workflow
+source: repo-analysis
+source_repo: jaceksidzina/open-mercato
+---
+
+# Open Mercato I18n Sync All
+
+## Action
+
+Update en.json first, then sync de.json, es.json, and pl.json across all modules
+
+## Evidence
+
+- i18n-translation-sync workflow
+- ~12x/month frequency
+- 4 language files pattern
+
+---
+id: open-mercato-spec-documentation
+trigger: "When planning or documenting new feature development"
+confidence: 0.83
+domain: workflow
+source: repo-analysis
+source_repo: jaceksidzina/open-mercato
+---
+
+# Open Mercato Spec Documentation
+
+## Action
+
+Create SPEC-*.md file in .ai/specs/ and update README.md index
+
+## Evidence
+
+- spec-documentation workflow
+- ~8x/month frequency
+- .ai/specs/ pattern
+
+---
+id: open-mercato-template-sync
+trigger: "When making changes that should be reflected in the app template"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: jaceksidzina/open-mercato
+---
+
+# Open Mercato Template Sync
+
+## Action
+
+Mirror changes in packages/create-app/template/ to keep template synchronized
+
+## Evidence
+
+- template-sync workflow
+- ~6x/month frequency
+- create-app template pattern
+
+---
+id: open-mercato-turborepo-structure
+trigger: "When organizing new code or modules"
+confidence: 0.9
+domain: architecture
+source: repo-analysis
+source_repo: jaceksidzina/open-mercato
+---
+
+# Open Mercato Turborepo Structure
+
+## Action
+
+Follow turborepo structure with packages/ and apps/ directories
+
+## Evidence
+
+- type: 'turborepo' in folderStructure
+- packages and apps in commonFolders
+
+---
+id: open-mercato-feature-based-modules
+trigger: "When organizing code within packages"
+confidence: 0.8
+domain: architecture
+source: repo-analysis
+source_repo: jaceksidzina/open-mercato
+---
+
+# Open Mercato Feature Based Modules
+
+## Action
+
+Use feature-based module organization
+
+## Evidence
+
+- moduleOrganization: 'feature-based'
+- src/modules/* pattern in workflows
+
